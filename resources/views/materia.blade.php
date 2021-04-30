@@ -64,6 +64,9 @@
                         </tbody>
                     </table>
                    
+                    <br><br>
+                    <a href="{{route('estudiante.index')}}">Ir a estudiantes</a>
+
                 </div>
             </div>
         </div>

@@ -59,7 +59,7 @@
                                         <button type="button" class="btn btn-secondary tn-sm" data-bs-toggle="modal" data-bs-target="#modal-agregar-{{$estudiante->id}}">
                                             Agregar Materias
                                         </button> 
-                                        <button type="button" class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#modal-delete-{{$estudiante->id}}">
+                                        <button type="button" class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#modal-ver-{{$estudiante->id}}">
                                             Ver Materias
                                           </button>  
                                     </td>
@@ -72,11 +72,15 @@
                                 </tr>
                                 @include('delete')
                                 @include('agregarMaterias')
+                                @include('verMaterias')
                             @endforeach
                             @endif
                         </tbody>
                     </table>
-                   
+
+                    <br><br>
+                    <a href="{{route('materia.index')}}">Ir a materias</a>
+
                 </div>
             </div>
         </div>

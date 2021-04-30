@@ -20,7 +20,8 @@ Route::get('/', function () {
 });
 
 
-Route::post('/asignacion', [AsignacionesController::class, 'agregarMaterias'])->name('asignacion.agregarMaterias');
+// Route::post('/asignacion', [AsignacionesController::class, 'agregarMaterias'])->name('asignacion.agregarMaterias');
+Route::post('/asignacion/{id}', [AsignacionesController::class, 'agregarMaterias'], )->name('agregarMaterias');
 
 Route::resource('/materia', MateriaController::class);
 Route::resource('/estudiante', EstudianteController::class);

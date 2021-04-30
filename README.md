@@ -7,6 +7,16 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## Sobre el Proyecto
+
+El proyecto esta realizado con el motor de Base de Datos Mysql, por lo cual al momento de iniciar por primera vez, debe ingresar en la terminal los siguientes comandos:
+
+    - run composer install (para generar dependencias en la carpeta vendor)
+    - Cambiar .env.example por .env
+    - run php artisan key:generate
+    - Configurar .env
+    - php artisan migrate
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Asignaciones;
+use App\Models\Estudiante;
 
 class AsignacionesController extends Controller
 {
@@ -27,22 +28,28 @@ class AsignacionesController extends Controller
         return $asignaciones;
     }
 
-    public function agregarMaterias() {
-        if(isset($_POST["submit"]))
-        {
-            $for_query = '';
-            if(!empty($_POST["seleccion"]))
-            {
-            foreach($_POST["seleccion"] as $seleccion)
-            {
-                echo $seleccion;
-            }
-            }
-            else
-            {
-            echo "<label class='text-danger'>* Please Select Atleast one Programming language</label>";
+    public function agregarMaterias(Request $request, $id) {
+        $seleccionados = $request->input('seleccion');
+
+        $borrados = Asignaciones::where('id_estudiante', $id)->delete();
+
+        if (empty($seleccionados)) {
+
+        } else {
+            forEach($seleccionados as $seleccion) {
+                $separacion = explode('-', $seleccion);
+                $idMateria = (int)$separacion[0];
+                $nombreMateria = $separacion[1];
+
+                $asignacionCreada = Asignaciones::create([
+                    'id_estudiante' => $id,
+                    'id_materia' => $idMateria,
+                    'mat_nombre' => $nombreMateria,
+                ]);
             }
         }
+
+        return redirect()->action([EstudianteController::class, 'index']);
     }
 
     public function store(Request $request) {
