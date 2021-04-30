@@ -55,6 +55,12 @@
                                     <td><a href="{{route('estudiante.edit', $estudiante->id)}}" class="btn btn-warning btn-sm"> Editar </a>
                                         <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modal-delete-{{$estudiante->id}}">
                                             Eliminar
+                                        </button> 
+                                        <button type="button" class="btn btn-secondary tn-sm" data-bs-toggle="modal" data-bs-target="#modal-agregar-{{$estudiante->id}}">
+                                            Agregar Materias
+                                        </button> 
+                                        <button type="button" class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#modal-delete-{{$estudiante->id}}">
+                                            Ver Materias
                                           </button>  
                                     </td>
                                     <td>{{$estudiante->id}}</td>
@@ -65,6 +71,7 @@
                                     <td>{{$estudiante->est_telefono}}</td>
                                 </tr>
                                 @include('delete')
+                                @include('agregarMaterias')
                             @endforeach
                             @endif
                         </tbody>

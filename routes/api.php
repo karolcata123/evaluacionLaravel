@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EstudianteController;
 use App\Http\Controllers\MateriaController;
+use App\Http\Controllers\AsignacionesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,7 @@ use App\Http\Controllers\MateriaController;
 */
 
 
+Route::apiResource('asignacion', AsignacionesController::class);
 
 Route::apiResource('estudiante', EstudianteController::class);
 

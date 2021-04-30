@@ -22,7 +22,8 @@ class EstudianteController extends Controller
                                             ->orderBy('est_ap_paterno', 'asc')
                                             ->paginate(10);
                                             
-        //$estudiante = Estudiante::all();
+        // $estudiante = Estudiante::all();
+        // return $estudiante;
         return view('estudiante', compact('estudiante', 'texto'));
     }
 

@@ -21,6 +21,8 @@ class MateriaController extends Controller
                                             ->orderBy('mat_nombre', 'asc')
                                             ->paginate(10);
                                             
+        // $materia = Materia::all();
+        // return $materia;                                            
         
         return view('materia', compact('materia', 'texto'));
     }
@@ -33,6 +35,12 @@ class MateriaController extends Controller
     public function create()
     {
         return view('creaMateria');
+    }
+
+
+    public static function listarRaw() {
+        $materia = Materia::all();
+        return $materia;
     }
 
     /**

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MateriaController;
 use App\Http\Controllers\EstudianteController;
+use App\Http\Controllers\AsignacionesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,6 +20,7 @@ Route::get('/', function () {
 });
 
 
+Route::post('/asignacion', [AsignacionesController::class, 'agregarMaterias'])->name('asignacion.agregarMaterias');
 
 Route::resource('/materia', MateriaController::class);
 Route::resource('/estudiante', EstudianteController::class);

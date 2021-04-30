@@ -9,5 +9,10 @@ class Estudiante extends Model
 {
     protected $fillable = ['est_nombre', 'est_ap_paterno', 'est_ap_materno', 'est_ci', 'est_telefono'];
     
-    
+    public function asignaciones(){
+
+        return $this->hasMany('App\Models\Asignaciones');
+  
+}
+      
 }

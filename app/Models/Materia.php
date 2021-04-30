@@ -10,5 +10,13 @@ class Materia extends Model
 {
   
    protected $fillable = ['mat_nombre'];
-   
+
+   // Vaios registros
+ 
+   public function asignaciones(){
+
+      return $this->hasMany('App\Models\Asignaciones');
+
+   }
+
 }
